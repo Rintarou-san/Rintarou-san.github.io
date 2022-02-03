@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=El+Messiri:wght@400;700&family=Roboto+Mono:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+:root {
+    --main-font: 'Roboto Mono', monospace;
+    --header-font: 'El Messiri', sans-serif;
+    --art-font: 'Comforter', cursive;
+    /*Colors*/
+    --light-gray: #e6e6e6;
+    --white: #fff;
+    --orange: #ffe500;
+    --gray: #8a8a8a;
+    --dark-blue: #00012d;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+}
+
+.justify-content-start {
+    justify-content: start;
+}
+
+.justify-content-ceneter {
+    justify-content: center;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+body {
+    font: 18px var(--main-font);
+    color: var(--dark-blue);
+}
+
+/*HEADER*/
+.header {
+    width: 100%;
+    padding: 30px 0 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.header.background {
+    background: var(--dark-blue);
+}
+
+.header-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-menu li {
+    padding-bottom: 20px;
+    border-bottom: 3px solid transparent;
+    transition: all .1s linear;
+}
+
+.header-menu li:hover {
+    border-bottom: 3px solid var(--white);
+}
+
+.header-menu li a {
+    font: 25px var(--header-font);
+    color: var(--white);
+}
+
+/*End HEADER*/
+
+/*FIRST SCREEN*/
+.first-screen {
+    height: auto;
+    min-height: 100%;
+    background: url(../img/background.jpg) center/cover no-repeat fixed;
+    position: relative;
+    z-index: 0;
+}
+
+.first-screen::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.logo {
+    width: auto;
+    max-width: 70%;
+    margin-top: 150px;
+}
+
+.logo h1 {
+    text-align: right;
+    letter-spacing: -5px;
+    font: italic 35px var(--main-font);
+    color: var(--white);
+}
+
+.logo h1 span {
+    font: 270px var(--art-font);
+    color: var(--white);
+    user-select: none;
+}
+
+.form-section {
+    width: auto;
+    max-width: 30%;
+    display: flex;
+    align-items: end;
+}
+
+.form {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 10px;
+    border: 1px solid var(--white);
+    border-radius: 5px;
+}
+
+.form p {
+    width: 80%;
+    margin-bottom: 30px;
+    color: var(--white);
+    letter-spacing: -2px;
+    text-align: center;
+}
+
+.form input {
+    width: 80%;
+    min-height: 40px;
+    border: 1px solid var(--dark-blue);
+    border-radius: 2px;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.form button {
+    width: 45%;
+    min-height: 45px;
+    margin-top: 30px;
+    border-radius: 5px;
+    background: var(--orange);
+    font: bold 20px var(--header-font);
+    color: var(--white);
+}
+
+@media(max-width:1300px) {
+    .logo h1 span {
+        font: 220px var(--art-font);
+    }
+
+    .form button {
+        width: 60%;
+        height: 45px;
+    }
+}
+
+@media(max-width:1000px) {
+    .logo h1 {
+        font: italic 30px var(--main-font);
+    }
+
+    .logo h1 span {
+        font: 200px var(--art-font);
+    }
+
+    .form p {
+        font-size: 14px;
+    }
+
+    .form button,
+    .form p,
+    .form input {
+        width: 90%;
+    }
+}
+
+@media(max-width: 900px) {
+    .header {
+        padding: 15px 0 0;
+    }
+    .header-menu li {
+        padding-bottom: 10px;
+    }
+    .logo {
+        max-width: 100%;
+        margin-top: 70px;
+    }
+
+    .form-section {
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .form {
+        max-width: 60%;
+        height: 60%;
+        margin: 20px;
+        padding: 20px 10px;
+        justify-content: center;
+    }
+    .form p{
+        margin-bottom: 10px;
+    }
+    .form input{
+        margin: 5px;
+    }
+    .form button{
+        margin-top: 15px;
+    }
+
+    .row {
+        flex-direction: column-reverse;
+    }
+}
+
+@media(max-width:650px) {
+    .logo h1 span {
+        font: 170px var(--art-font);
+    }
+}
+
+@media(max-width:535px) {
+    .logo h1 {
+        font-size: 25px;
+    }
+
+    .logo h1 span {
+        font: 150px var(--art-font);
+    }
+
+    .form {
+        max-width: 80%;
+    }
+}
+
+
+/*End FIRST SCREEN*/
